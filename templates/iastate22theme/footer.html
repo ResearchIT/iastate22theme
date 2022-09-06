@@ -1,0 +1,85 @@
+<footer class="site-footer site-footer--ecosystem">
+    <div class="site-footer__flex-wrap">
+      <div class="site-footer__logo-social-links-wrap">
+        <img class="site-footer__logo" src="https://cdn.theme.iastate.edu/img/iastate22/iowa-state-university-logo-with-tagline-sci-tech.svg" alt="Iowa State University of Science and Technology" loading="lazy" width="516" height="69">
+
+        {% if isu22.social_links %}
+        <ul class="site-footer__social">
+            {% for menu_item in isu22.social_links %}
+            <li>
+                <a href="{{ menu_item.url }}" target="_blank">
+                  <i class="{{ menu_item.icon | default:"fak fa-external-link-square" }}" aria-hidden="true"></i>
+                  <span class="visible-for-screen-readers">{{ menu_item.title }}</span>
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+
+      {% if isu22.footer_nav %}
+      <nav class="site-footer__primary-nav" aria-label="Footer Primary">
+        <ul>
+          {% for link in isu22.footer_nav %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+      {% endif %}
+
+
+
+      <nav class="site-footer__secondary-nav" aria-label="Footer Secondary">
+        {% if isu22.footer_secondary_nav|length > 3 %}<h2 class="site-footer__section-label">Quick Links</h2>{% endif %}
+        <ul{% if isu22.footer_secondary_nav|length < 3 %} class="site-footer__secondary-nav-short"{% endif %}>
+          {% for link in isu22.footer_secondary_nav %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      <div class="site-footer__site-org-contact-info">
+        <h2 class="site-footer__section-label">{{ isu22.site_org_contact.name }}</h2>
+        {% if isu22.site_org_contact.address %}
+        <div class="site-footer__site-org-contact-address">
+          <p>{% if isu22.site_org_contact.address.building %}{{ isu22.site_org_contact.address.building }}<br>{% endif %}
+          {{ isu22.site_org_contact.address.street }}<br>
+          {{ isu22.site_org_contact.address.city_state_zip }}</p>
+        </div>
+        {% endif %}
+        <div class="site-footer__site-org-contact-email-phone-wrap">
+          {% if isu22.site_org_contact.phone %}
+          <div class="site-footer__site-org-contact-phone">
+            {% for phone in isu22.site_org_contact.phone %}
+            <p>{% if phone.label %}{{ phone.label }}: {% endif %}{{ phone.phone_number }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
+          {% if isu22.site_org_contact.email %}
+          <div class="site-footer__site-org-contact-email">
+            {% for email in isu22.site_org_contact.email %}
+            <p>{% if email.label %}{{ email.label }}: {% endif %}<a href="mailto:{{ email.email_address }}">{{ email.email_address }}</a></p>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+
+    <div class="site-footer__bottom-wrap">
+      <nav class="site-footer__utility-nav" aria-label="Footer Utility">
+        <ul>
+          {% for link in isu22.footer_utility_nav %}
+          <li>
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          </li>
+          {% endfor %}
+        </ul>
+      </nav>
+      <div class="site-footer__copyright"><p>&copy; {{isu22.copyright}}</p></div>
+    </div>
+  </footer>
