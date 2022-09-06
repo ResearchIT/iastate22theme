@@ -45,9 +45,11 @@ A basic page template would look like this:
 {% extends "iastate22theme/base.html" %}
 
 {% block content %}
-    <div class="container">
+<div class="outer-pad">
+    <div class="text-content">
     Hello world
     </div>
+</div>
 {% endblock %}
 ```
 
