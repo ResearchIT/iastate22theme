@@ -1,4 +1,9 @@
-Django app for the [IASTATE theme](https://www.theme.iastate.edu/)
+Django app for the [IASTATE theme](https://www.theme.iastate.edu/).
+
+Based on:
+* [Base HTML Template](https://html.theme.iastate.edu/)
+* [Header Twig Template](https://github.com/iastate/iastate22-frontend/blob/master/src/components/site-header/site-header--ecosystem.twig)
+* [Footer Twig Template](https://github.com/iastate/iastate22-frontend/blob/master/src/components/site-footer/site-footer--ecosystem.twig)
 
 # Set up
 
