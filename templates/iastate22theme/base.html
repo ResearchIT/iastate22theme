@@ -1,9 +1,8 @@
-{% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- Prevents GDPR-dependent scripts from executing on load -->
         <script>
             window.YETT_BLACKLIST = [
@@ -14,50 +13,51 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
-        <link rel="icon" href="https://cdn.theme.iastate.edu/favicon/favicon.ico" sizes="any"><!-- 48×48 -->
-        <link rel="icon" href="https://cdn.theme.iastate.edu/favicon/favicon.svg" type="image/svg+xml">
-        <link rel="apple-touch-icon" href="https://cdn.theme.iastate.edu/favicon/apple-touch-icon.png"><!-- 180×180 -->
-        <link rel="manifest" href="https://cdn.theme.iastate.edu/favicon/manifest.webmanifest">
-        <link rel="stylesheet" href="https://cdn.theme.iastate.edu/iastate/5+/css/iastate.min.css">
-        <link media="screen" rel="stylesheet" href="{% static 'css/index.css' %}">
+		<link media="screen" rel="stylesheet" href="https://cdn.theme.iastate.edu/iastate/5+/css/iastate.min.css">
+		<link media="screen" rel="stylesheet" href="https://cdn.theme.iastate.edu/iastate22/css/iastate22.css">
+		<link media="print" rel="stylesheet" href="https://cdn.theme.iastate.edu/iastate22/css/print.css">
+		<!-- favicon -->
+		<link rel="icon" href="https://cdn.theme.iastate.edu/favicon/favicon.ico" sizes="any"><!-- 48×48 -->
+		<link rel="icon" href="https://cdn.theme.iastate.edu/favicon/favicon.svg" type="image/svg+xml">
+		<link rel="apple-touch-icon" href="https://cdn.theme.iastate.edu/favicon/apple-touch-icon.png"><!-- 180×180 -->
+		<link rel="manifest" href="https://cdn.theme.iastate.edu/favicon/manifest.webmanifest">
+		<!-- /favicon -->
         <title>{% block title %}{{ isu22.html_title_tag }}{% endblock %}</title>
         <script>
             document.documentElement.classList.add('js');
         </script>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        {% block extra_head_content  %}{% endblock %}
+        {% block extra_head_content %}{% endblock %}
     </head>
     <body>
         <a class="skip-link" href="#main-content">Skip To Main Content</a>
-<div class="off-canvas">
-  <div class="max-bound">
-    {% include "iastate22theme/header.html" %}
-    <main id="main-content">
-      {% block content %}
-        <div class="outer-pad">
+        <div class="off-canvas">
+        <div class="max-bound">
+            {% include "iastate22theme/header.html" %}
+            <main id="main-content">
+            {% block content %}
+                <div class="outer-pad">
 
+                </div>
+            {% endblock %}
+            </main>
+            {% include "iastate22theme/footer.html" %}
         </div>
-      {% endblock %}
-    </main>
-    {% include "iastate22theme/footer.html" %}
-  </div>
-</div>
-{% block privacy_consent  %}
-<div class="privacy-consent" hidden>
-    <div class="privacy-consent__content">
-        This website uses cookies to measure traffic and improve your experience. Declining tracking cookies will set a single cookie to remember your preference. You can manage your cookie preference at any time and learn more by visiting our <a href="/privacy-policy">Privacy Policy</a>.
-    </div>
-    <div class="privacy-consent__buttons">
-        <button class="iastate22-button iastate22-button--reverse privacy-consent__accept" type="button">Accept<span class="arrow"></span></button>
-        <button class="iastate22-button iastate22-button--reverse privacy-consent__decline" type="button">Decline<span class="arrow"></span></button>
-    </div>
-</div>
-{% endblock %}
-        <script src="{% static 'js/index.js' %}"></script>
+        </div>
+        {% block privacy_consent  %}
+        <div class="privacy-consent" hidden>
+            <div class="privacy-consent__content">
+                This website uses cookies to measure traffic and improve your experience. Declining tracking cookies will set a single cookie to remember your preference. You can manage your cookie preference at any time and learn more by visiting our <a href="/privacy-policy">Privacy Policy</a>.
+            </div>
+            <div class="privacy-consent__buttons">
+                <button class="iastate22-button iastate22-button--reverse privacy-consent__accept" type="button">Accept<span class="arrow"></span></button>
+                <button class="iastate22-button iastate22-button--reverse privacy-consent__decline" type="button">Decline<span class="arrow"></span></button>
+            </div>
+        </div>
+        {% endblock %}
         <script src="https://cdn.theme.iastate.edu/iastate/5+/js/bootstrap.min.js"></script>
+        <script src="https://cdn.theme.iastate.edu/iastate22/js/iastate22.js"></script>
         <script src="https://kit.fontawesome.com/b658fac974.js" crossorigin="anonymous"></script>
-        <link media="print" rel="stylesheet" href="{% static 'css/print.css' %}">
-        {% block extra_footer_scripts  %}{% endblock %}
+        {% block extra_footer_scripts %}{% endblock %}
     </body>
 </html>
 
